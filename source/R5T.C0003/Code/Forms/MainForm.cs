@@ -8,14 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace R5T.C0003.Forms
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private IServiceProvider ServiceProvider { get; }
+
+
+        public MainForm(
+            IServiceProvider serviceProvider)
         {
             InitializeComponent();
+
+            this.ServiceProvider = serviceProvider;
 
             this.OperationsTreeView.Nodes["RepositoryOperationsNode"].Expand();
         }
@@ -57,12 +65,11 @@ namespace R5T.C0003.Forms
 
             if (e.Node.Name == "CreateLibraryRepositoryNode")
             {
-                var newLibraryForm = new Repository.NewLibrary
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true,
-                };
+                var newLibraryForm = this.ServiceProvider.GetRequiredService<Repository.NewLibrary>();
+
+                newLibraryForm.Dock = DockStyle.Fill;
+                newLibraryForm.TopLevel = false;
+                newLibraryForm.TopMost = true;
 
                 this.OperationPanel.Controls.Add(newLibraryForm);
 
@@ -74,7 +81,7 @@ namespace R5T.C0003.Forms
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            Program.Testing(this);
+            //Program.Testing(this);
         }
     }
 }

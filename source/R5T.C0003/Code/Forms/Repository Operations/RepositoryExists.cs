@@ -11,49 +11,16 @@ using System.Windows.Forms;
 
 namespace R5T.C0003.Forms.Repository
 {
-    public partial class RepositoryExists : Form
+    public partial class RepositoryExists : LayoutForRepositoryOperation
     {
         public RepositoryExists()
         {
             InitializeComponent();
-
-            this.OwnerNameSelectorComboBox.Items.AddRange(new[]
-            {
-                Instances.GitHubOwnerNames.DavidCoats,
-                Instances.GitHubOwnerNames.SafetyCone
-            });
-        }
-
-        private string GetGitHubOwnerName()
-        {
-            var gitHubOwnerName = this.OwnerNameSelectorComboBox.SelectedItem as string;
-            return gitHubOwnerName;
-        }
-
-        private string GetGitHubOwner()
-        {
-            var gitHubOwnerName = this.GetGitHubOwnerName();
-            
-            var gitHubOwner = Instances.GitHubOwnerOperator.GetGitHubOwner(gitHubOwnerName);
-            return gitHubOwner;
-        }
-
-        private void OwnerNameSelectorComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            var gitHubOwner = this.GetGitHubOwner();
-
-            this.GitHubOwnerLabel.Text = gitHubOwner;
-        }
-
-        private void RepositoryExists_Shown(object sender, EventArgs e)
-        {
-            //this.OwnerNameSelectorComboBox.SelectedItem = Instances.GitHubOwnerNames.SafetyCone;
-            this.OwnerNameSelectorComboBox.SelectedIndex = 1;
         }
 
         private async void CheckExistsButton_Click(object sender, EventArgs e)
         {
-            var repositoryName = this.RepositoryNameTextBox.Text;
+            var repositoryName = this.GetRepositoryName();
             var gitHubOwner = this.GetGitHubOwner();
 
             var repositoryExists = await Instances.RepositoryOperator.RepositoryExists(

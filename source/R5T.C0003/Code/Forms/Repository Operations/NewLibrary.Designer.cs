@@ -28,37 +28,153 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CreateButton = new System.Windows.Forms.Button();
+            this.RemoteRepositoryLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.RemoteRepositoryLabelLabel = new System.Windows.Forms.Label();
+            this.LocalLabelLabel = new System.Windows.Forms.Label();
+            this.LocalRepositoryLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.IsPrivateCheckBox = new System.Windows.Forms.CheckBox();
+            this.MainGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // MainGroupBox
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MainGroupBox.Controls.Add(this.IsPrivateCheckBox);
+            this.MainGroupBox.Controls.Add(this.DescriptionTextBox);
+            this.MainGroupBox.Controls.Add(this.DescriptionLabel);
+            this.MainGroupBox.Controls.Add(this.LocalLabelLabel);
+            this.MainGroupBox.Controls.Add(this.LocalRepositoryLinkLabel);
+            this.MainGroupBox.Controls.Add(this.RemoteRepositoryLabelLabel);
+            this.MainGroupBox.Controls.Add(this.RemoteRepositoryLinkLabel);
+            this.MainGroupBox.Controls.Add(this.CreateButton);
+            this.MainGroupBox.Text = "Create New Library Repository";
+            this.MainGroupBox.Controls.SetChildIndex(this.RepositoryNameTextBox, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.CreateButton, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.RemoteRepositoryLinkLabel, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.RemoteRepositoryLabelLabel, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.LocalRepositoryLinkLabel, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.LocalLabelLabel, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.DescriptionLabel, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.DescriptionTextBox, 0);
+            this.MainGroupBox.Controls.SetChildIndex(this.IsPrivateCheckBox, 0);
+            // 
+            // CreateButton
+            // 
+            this.CreateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CreateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CreateButton.Location = new System.Drawing.Point(13, 282);
+            this.CreateButton.Name = "CreateButton";
+            this.CreateButton.Size = new System.Drawing.Size(100, 39);
+            this.CreateButton.TabIndex = 11;
+            this.CreateButton.Text = "Create";
+            this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            // 
+            // RemoteRepositoryLinkLabel
+            // 
+            this.RemoteRepositoryLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RemoteRepositoryLinkLabel.AutoSize = true;
+            this.RemoteRepositoryLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RemoteRepositoryLinkLabel.Location = new System.Drawing.Point(81, 332);
+            this.RemoteRepositoryLinkLabel.Name = "RemoteRepositoryLinkLabel";
+            this.RemoteRepositoryLinkLabel.Size = new System.Drawing.Size(16, 15);
+            this.RemoteRepositoryLinkLabel.TabIndex = 12;
+            this.RemoteRepositoryLinkLabel.TabStop = true;
+            this.RemoteRepositoryLinkLabel.Text = "...";
+            this.RemoteRepositoryLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RemoteRepositoryLinkLabel_LinkClicked);
+            // 
+            // RemoteRepositoryLabelLabel
+            // 
+            this.RemoteRepositoryLabelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RemoteRepositoryLabelLabel.AutoSize = true;
+            this.RemoteRepositoryLabelLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RemoteRepositoryLabelLabel.Location = new System.Drawing.Point(27, 332);
+            this.RemoteRepositoryLabelLabel.Name = "RemoteRepositoryLabelLabel";
+            this.RemoteRepositoryLabelLabel.Size = new System.Drawing.Size(48, 15);
+            this.RemoteRepositoryLabelLabel.TabIndex = 13;
+            this.RemoteRepositoryLabelLabel.Text = "GitHub:";
+            // 
+            // LocalLabelLabel
+            // 
+            this.LocalLabelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LocalLabelLabel.AutoSize = true;
+            this.LocalLabelLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LocalLabelLabel.Location = new System.Drawing.Point(27, 353);
+            this.LocalLabelLabel.Name = "LocalLabelLabel";
+            this.LocalLabelLabel.Size = new System.Drawing.Size(38, 15);
+            this.LocalLabelLabel.TabIndex = 15;
+            this.LocalLabelLabel.Text = "Local:";
+            // 
+            // LocalRepositoryLinkLabel
+            // 
+            this.LocalRepositoryLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LocalRepositoryLinkLabel.AutoSize = true;
+            this.LocalRepositoryLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LocalRepositoryLinkLabel.Location = new System.Drawing.Point(81, 353);
+            this.LocalRepositoryLinkLabel.Name = "LocalRepositoryLinkLabel";
+            this.LocalRepositoryLinkLabel.Size = new System.Drawing.Size(16, 15);
+            this.LocalRepositoryLinkLabel.TabIndex = 14;
+            this.LocalRepositoryLinkLabel.TabStop = true;
+            this.LocalRepositoryLinkLabel.Text = "...";
+            this.LocalRepositoryLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LocalRepositoryLinkLabel_LinkClicked);
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 376);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Create New Library Repository";
+            this.DescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(13, 231);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(457, 45);
+            this.DescriptionTextBox.TabIndex = 16;
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DescriptionLabel.Location = new System.Drawing.Point(13, 207);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(92, 21);
+            this.DescriptionLabel.TabIndex = 17;
+            this.DescriptionLabel.Text = "Description:";
+            // 
+            // IsPrivateCheckBox
+            // 
+            this.IsPrivateCheckBox.AutoSize = true;
+            this.IsPrivateCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.IsPrivateCheckBox.Location = new System.Drawing.Point(288, 71);
+            this.IsPrivateCheckBox.Name = "IsPrivateCheckBox";
+            this.IsPrivateCheckBox.Size = new System.Drawing.Size(99, 25);
+            this.IsPrivateCheckBox.TabIndex = 18;
+            this.IsPrivateCheckBox.Text = "Is Private?";
+            this.IsPrivateCheckBox.UseVisualStyleBackColor = true;
             // 
             // NewLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 400);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewLibrary";
             this.Text = "NewLibrary";
+            this.MainGroupBox.ResumeLayout(false);
+            this.MainGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button CreateButton;
+        private System.Windows.Forms.Label LocalLabelLabel;
+        private System.Windows.Forms.LinkLabel LocalRepositoryLinkLabel;
+        private System.Windows.Forms.Label RemoteRepositoryLabelLabel;
+        private System.Windows.Forms.LinkLabel RemoteRepositoryLinkLabel;
+        protected System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.CheckBox IsPrivateCheckBox;
     }
 }

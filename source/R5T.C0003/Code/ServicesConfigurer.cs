@@ -2,17 +2,14 @@
 using System.Threading.Tasks;
 
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 using R5T.F0036.F001;
 using R5T.T0148;
 
-using R5T.C0003.Forms;
-
 
 namespace R5T.C0003
 {
-    public class ServicesConfigurer : IAsynchronousServicesConfigurer
+    public class ServicesConfigurer : IServicesConfigurer
     {
         public Task ConfigureServices(IServiceCollection services)
         {
@@ -21,16 +18,18 @@ namespace R5T.C0003
             ApplicationConfiguration.Initialize();
 
             // Configure services.
-            services
-                .AddLogging(loggingBuilder =>
+            F0035.ServicesOperator.Instance.AddLogging(
+                services,
+                loggingBuilder =>
                 {
                     loggingBuilder
-                        .SetMinimumLevel(LogLevel.Debug)
-                        .AddConsole()
                         .AddFile(Instances.FilePaths.LogFilePath)
                         ;
-                })
-                .AddTransient<MainForm>()
+                });
+
+            services
+                .AddSingleton<Forms.MainForm>()
+                .AddTransient<Forms.Repository.NewLibrary>()
                 ;
 
             return Task.CompletedTask;

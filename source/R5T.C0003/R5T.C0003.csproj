@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.F0034\source\R5T.F0034\R5T.F0034.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0035\source\R5T.F0035\R5T.F0035.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0037\source\R5T.F0037\R5T.F0037.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0041\source\R5T.F0041\R5T.F0041.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0042\source\R5T.F0042\R5T.F0042.csproj" />
-    <ProjectReference Include="..\..\..\R5T.S0043\source\R5T.S0043.Library\R5T.S0043.Library.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0045\source\R5T.F0045\R5T.F0045.csproj" />
     <ProjectReference Include="..\..\..\R5T.T0148\source\R5T.T0148\R5T.T0148.csproj" />
   </ItemGroup>
 
