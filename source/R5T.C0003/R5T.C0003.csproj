@@ -8,13 +8,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.F0016\source\R5T.F0016\R5T.F0016.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0033\source\R5T.F0033\R5T.F0033.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0034\source\R5T.F0034\R5T.F0034.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0035\source\R5T.F0035\R5T.F0035.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0037\source\R5T.F0037\R5T.F0037.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0041\source\R5T.F0041\R5T.F0041.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0042\source\R5T.F0042\R5T.F0042.csproj" />
     <ProjectReference Include="..\..\..\R5T.F0045\source\R5T.F0045\R5T.F0045.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0061\source\R5T.F0061\R5T.F0061.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0062\source\R5T.F0062\R5T.F0062.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0063\source\R5T.F0063\R5T.F0063.csproj" />
     <ProjectReference Include="..\..\..\R5T.T0148\source\R5T.T0148\R5T.T0148.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Z0015\source\R5T.Z0015\R5T.Z0015.csproj" />
+    <ProjectReference Include="..\R5T.C0003.F001\R5T.C0003.F001.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Code\Forms\Base Forms\LayoutForProjectOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Base Forms\LayoutForCreateNewRepositoryOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Repository Operations\NewConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Solution Operations\ListAllDependencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Solution Operations\ListMissingDependencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

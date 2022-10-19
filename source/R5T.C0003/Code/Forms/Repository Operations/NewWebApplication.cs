@@ -13,13 +13,13 @@ using Microsoft.Extensions.Logging;
 
 namespace R5T.C0003.Forms.Repository
 {
-    public partial class NewLibrary : LayoutForCreateNewRepositoryOperation
+    public partial class NewWebApplication : LayoutForCreateNewRepositoryOperation
     {
         private ILogger Logger { get; }
 
 
-        public NewLibrary(
-            ILogger<NewLibrary> logger)
+        public NewWebApplication(
+            ILogger<NewWebApplication> logger)
         {
             InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace R5T.C0003.Forms.Repository
 
             try
             {
-                var repositoryLocations = await Instances.RepositoryOperations.CreateNew_LibraryRepository(
+                var repositoryLocations = await Instances.RepositoryOperations.CreateNew_WebApplicationRepository(
                     gitHubOwner,
                     repositoryName,
                     description,

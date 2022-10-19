@@ -6,20 +6,20 @@ using R5T.F0037;
 
 namespace R5T.C0003
 {
-    partial class Program : IAsynchronousProgram
+    partial class Program : ISynchronousProgram
     {
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
-            await F0037.Instances.Program
-                .ConfigureServices(servicesBuilder =>
+            F0037.Instances.Program
+                .ConfigureServices_Synchronous(async servicesBuilder =>
                 {
-                    servicesBuilder.UseServicesConfigurer<ServicesConfigurer>();
+                    await servicesBuilder.UseServicesConfigurer<ServicesConfigurer>();
                 })
-                .Run<Program>();
+                .Run_Synchronous<Program>();
         }
     }
 }

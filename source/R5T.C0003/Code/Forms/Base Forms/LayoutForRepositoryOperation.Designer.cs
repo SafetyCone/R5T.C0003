@@ -52,7 +52,7 @@
             this.RepositoryNameTextBox.Location = new System.Drawing.Point(13, 69);
             this.RepositoryNameTextBox.Name = "RepositoryNameTextBox";
             this.RepositoryNameTextBox.Size = new System.Drawing.Size(257, 29);
-            this.RepositoryNameTextBox.TabIndex = 5;
+            this.RepositoryNameTextBox.TabIndex = 1;
             // 
             // RepositoryNameLabel
             // 
@@ -92,7 +92,7 @@
             this.OwnerNameSelectorComboBox.Location = new System.Drawing.Point(13, 138);
             this.OwnerNameSelectorComboBox.Name = "OwnerNameSelectorComboBox";
             this.OwnerNameSelectorComboBox.Size = new System.Drawing.Size(257, 29);
-            this.OwnerNameSelectorComboBox.TabIndex = 7;
+            this.OwnerNameSelectorComboBox.TabIndex = 3;
             this.OwnerNameSelectorComboBox.SelectedValueChanged += new System.EventHandler(this.OwnerNameSelectorComboBox_SelectedValueChanged);
             // 
             // OwnerNameLabel

@@ -1,6 +1,6 @@
 ﻿namespace R5T.C0003.Forms.Repository
 {
-    partial class NewLibrary
+    partial class NewConsole
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,16 @@
             // 
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
-            // NewLibrary
+            // MainGroupBox
+            // 
+            this.MainGroupBox.Text = "Create New Console Repository";
+            // 
+            // NewConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 400);
-            this.Name = "NewLibrary";
+            this.Name = "NewConsole";
             this.MainGroupBox.ResumeLayout(false);
             this.MainGroupBox.PerformLayout();
             this.ResumeLayout(false);

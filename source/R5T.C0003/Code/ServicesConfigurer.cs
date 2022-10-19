@@ -22,14 +22,19 @@ namespace R5T.C0003
                 services,
                 loggingBuilder =>
                 {
+                    var logFilePath = Instances.LogFilePathOperator.GetLogFilePath();
+
                     loggingBuilder
-                        .AddFile(Instances.FilePaths.LogFilePath)
+                        .AddFile(logFilePath)
                         ;
                 });
 
             services
                 .AddSingleton<Forms.MainForm>()
+                .AddTransient<Forms.Repository.NewConsole>()
+                .AddTransient<Forms.Repository.NewConsoleProgramAsService>()
                 .AddTransient<Forms.Repository.NewLibrary>()
+                .AddTransient<Forms.Repository.NewWebApplication>()
                 ;
 
             return Task.CompletedTask;

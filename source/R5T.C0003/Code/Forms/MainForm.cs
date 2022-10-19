@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 using Microsoft.Extensions.DependencyInjection;
 
+using R5T.F0062;
+
 
 namespace R5T.C0003.Forms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IHasNotifyIcon
     {
         private IServiceProvider ServiceProvider { get; }
+
+        NotifyIcon IHasNotifyIcon.NotifyIcon => this.NotifyIcon;
 
 
         public MainForm(
@@ -25,7 +29,12 @@ namespace R5T.C0003.Forms
 
             this.ServiceProvider = serviceProvider;
 
-            this.OperationsTreeView.Nodes["RepositoryOperationsNode"].Expand();
+            // Discard the disengage action.
+            _ = F0062.NotifyIconOperator.Instance.EngageMinimizeToSystemTray(this);
+
+            this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.RepositoryOperationsNode].Expand();
+            this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.SolutionOperationsNode].Expand();
+            this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.ProjectOperationsNode].Expand();
         }
 
         public void SelectOperationNode(string nodeName)
@@ -44,44 +53,48 @@ namespace R5T.C0003.Forms
 
         private void OperationsTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            var panelFormConstructorsByTreeViewNodeName = new Dictionary<string, Func<Form>>
+            {
+                { Instances.TreeViewNodeNames.AddMissingDependenciesSolutionNode, () => new Solution.AddMissingDependencies() },
+                { Instances.TreeViewNodeNames.CreateLibraryRepositoryNode, () =>  this.ServiceProvider.GetRequiredService<Repository.NewLibrary>() },
+                { Instances.TreeViewNodeNames.ListAllDependenciesSolutionNode, () => new Solution.ListAllDependencies() },
+                { Instances.TreeViewNodeNames.ListMissingDependenciesSolutionNode, () => new Solution.ListMissingDependencies() },
+                { Instances.TreeViewNodeNames.ListRecursiveDependenciesProjectNode, () => new Project.ListRecursiveDependencies() },
+                { Instances.TreeViewNodeNames.NewConsoleRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewConsole>() },
+                { Instances.TreeViewNodeNames.NewProgramAsServiceRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewConsoleProgramAsService>() },
+                { Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewWebApplication>() },
+                { Instances.TreeViewNodeNames.RepositoryExistsNode, () => new Repository.RepositoryExists() },
+            };
+
+            var selectedNodeName = e.Node.Name;
+
+            // Return if an unrecognized node.
+            if(!panelFormConstructorsByTreeViewNodeName.ContainsKey(selectedNodeName))
+            {
+                return;
+            }
+
+            // Now we have a recognized node.
+            var constructor = panelFormConstructorsByTreeViewNodeName[selectedNodeName];
+
+            var panelForm = constructor();
+
+            // Set panel form.
             // Clear all first.
             this.OperationPanel.Controls.Clear();
 
-            if (e.Node.Name == "RepositoryExistsNode")
-            {
-                var repositoryExistsForm = new Repository.RepositoryExists
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true,
-                };
+            panelForm.Dock = DockStyle.Fill;
+            panelForm.TopLevel = false;
+            panelForm.TopMost = false;
 
-                this.OperationPanel.Controls.Add(repositoryExistsForm);
+            this.OperationPanel.Controls.Add(panelForm);
 
-                repositoryExistsForm.Show();
-
-                return;
-            }
-
-            if (e.Node.Name == "CreateLibraryRepositoryNode")
-            {
-                var newLibraryForm = this.ServiceProvider.GetRequiredService<Repository.NewLibrary>();
-
-                newLibraryForm.Dock = DockStyle.Fill;
-                newLibraryForm.TopLevel = false;
-                newLibraryForm.TopMost = true;
-
-                this.OperationPanel.Controls.Add(newLibraryForm);
-
-                newLibraryForm.Show();
-
-                return;
-            }
+            panelForm.Show();
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            //Program.Testing(this);
+            Program.Testing(this);
         }
     }
 }

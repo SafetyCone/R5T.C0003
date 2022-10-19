@@ -27,14 +27,13 @@ namespace R5T.C0003
 
         public static void Testing(MainForm mainForm)
         {
-            mainForm.SelectOperationNode("RepositoryExistsNode");
+            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode);
         }
 
-        public Task Run()
+        [STAThread]
+        public void Run()
         {
             Application.Run(this.MainForm);
-
-            return Task.CompletedTask;
         }
     }
 }
