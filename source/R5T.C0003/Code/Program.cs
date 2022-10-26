@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Microsoft.Extensions.Logging;
@@ -27,7 +26,7 @@ namespace R5T.C0003
 
         public static void Testing(MainForm mainForm)
         {
-            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode);
+            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.AddServiceDefinitionToProjectNode);
         }
 
         [STAThread]

@@ -30,7 +30,6 @@
         {
             this.ProjectFilePathTextBox = new System.Windows.Forms.TextBox();
             this.ProjectFilePathLabel = new System.Windows.Forms.Label();
-            this.ProjectFileOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SelectProjectFileButton = new System.Windows.Forms.Button();
             this.FileExistsLabelLabel = new System.Windows.Forms.Label();
             this.IsProjectFileLabelLabel = new System.Windows.Forms.Label();
@@ -60,7 +59,6 @@
             this.ProjectFilePathTextBox.Name = "ProjectFilePathTextBox";
             this.ProjectFilePathTextBox.Size = new System.Drawing.Size(457, 29);
             this.ProjectFilePathTextBox.TabIndex = 10;
-            this.ProjectFilePathTextBox.TextChanged += new System.EventHandler(this.ProjectFilePathTextBox_TextChanged);
             // 
             // ProjectFilePathLabel
             // 
@@ -72,11 +70,6 @@
             this.ProjectFilePathLabel.TabIndex = 12;
             this.ProjectFilePathLabel.Text = "Project File:";
             // 
-            // ProjectFileOpenFileDialog
-            // 
-            this.ProjectFileOpenFileDialog.Filter = "C# Project Files (*.csproj)|*.csproj";
-            this.ProjectFileOpenFileDialog.Title = "Select C# Project File";
-            // 
             // SelectProjectFileButton
             // 
             this.SelectProjectFileButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -86,13 +79,12 @@
             this.SelectProjectFileButton.TabIndex = 1;
             this.SelectProjectFileButton.Text = "Select";
             this.SelectProjectFileButton.UseVisualStyleBackColor = true;
-            this.SelectProjectFileButton.Click += new System.EventHandler(this.SelectProjectFileButton_Click);
             // 
             // FileExistsLabelLabel
             // 
             this.FileExistsLabelLabel.AutoSize = true;
             this.FileExistsLabelLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FileExistsLabelLabel.Location = new System.Drawing.Point(30, 169);
+            this.FileExistsLabelLabel.Location = new System.Drawing.Point(171, 109);
             this.FileExistsLabelLabel.Name = "FileExistsLabelLabel";
             this.FileExistsLabelLabel.Size = new System.Drawing.Size(62, 15);
             this.FileExistsLabelLabel.TabIndex = 13;
@@ -102,7 +94,7 @@
             // 
             this.IsProjectFileLabelLabel.AutoSize = true;
             this.IsProjectFileLabelLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.IsProjectFileLabelLabel.Location = new System.Drawing.Point(30, 192);
+            this.IsProjectFileLabelLabel.Location = new System.Drawing.Point(171, 132);
             this.IsProjectFileLabelLabel.Name = "IsProjectFileLabelLabel";
             this.IsProjectFileLabelLabel.Size = new System.Drawing.Size(79, 15);
             this.IsProjectFileLabelLabel.TabIndex = 14;
@@ -112,7 +104,7 @@
             // 
             this.FileExistsLabel.AutoSize = true;
             this.FileExistsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FileExistsLabel.Location = new System.Drawing.Point(136, 169);
+            this.FileExistsLabel.Location = new System.Drawing.Point(277, 109);
             this.FileExistsLabel.Name = "FileExistsLabel";
             this.FileExistsLabel.Size = new System.Drawing.Size(16, 15);
             this.FileExistsLabel.TabIndex = 15;
@@ -122,7 +114,7 @@
             // 
             this.IsProjectFileLabel.AutoSize = true;
             this.IsProjectFileLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.IsProjectFileLabel.Location = new System.Drawing.Point(136, 192);
+            this.IsProjectFileLabel.Location = new System.Drawing.Point(277, 132);
             this.IsProjectFileLabel.Name = "IsProjectFileLabel";
             this.IsProjectFileLabel.Size = new System.Drawing.Size(16, 15);
             this.IsProjectFileLabel.TabIndex = 16;
@@ -155,13 +147,12 @@
         #endregion
 
         private System.Windows.Forms.Button SelectProjectFileButton;
-        protected System.Windows.Forms.TextBox ProjectFilePathTextBox;
-        private System.Windows.Forms.Label ProjectFilePathLabel;
-        private System.Windows.Forms.OpenFileDialog ProjectFileOpenFileDialog;
+        private System.Windows.Forms.TextBox ProjectFilePathTextBox;
         private System.Windows.Forms.Label IsProjectFileLabel;
         private System.Windows.Forms.Label FileExistsLabel;
         private System.Windows.Forms.Label IsProjectFileLabelLabel;
         private System.Windows.Forms.Label FileExistsLabelLabel;
-        private System.Windows.Forms.Button RunButton;
+        protected System.Windows.Forms.Button RunButton;
+        protected System.Windows.Forms.Label ProjectFilePathLabel;
     }
 }

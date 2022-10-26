@@ -10,6 +10,23 @@ namespace R5T.C0003.F001
     [FunctionalityMarker]
 	public partial interface ITextOutputGenerator : IFunctionalityMarker
 	{
+		public IEnumerable<string> ForDependencyChains(
+			string rootProjectFilePath,
+			string dependencyProjectFilePath,
+			string[][] dependencyChains_Inclusive)
+        {
+			var lines = F0000.EnumerableOperator.Instance.From($"For dependency project:\n{dependencyProjectFilePath}\n")
+				.Append($"Within root project:\n{rootProjectFilePath}\n")
+				.Append(dependencyChains_Inclusive
+					.SelectMany(projects => projects
+						// Skip the first since it will be the root project.
+						.SkipFirst()
+						.Append(String.Empty)))
+				;
+
+			return lines;
+		}
+
 		public IEnumerable<string> ForSolutionListDependencies(
 			string solutionFilePath,
 			string[] projectFilePaths,

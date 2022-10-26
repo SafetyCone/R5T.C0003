@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace R5T.C0003.Forms.Project
 {
-    public partial class ListRecursiveDependencies : LayoutForProjectOperation
+    public sealed partial class ListRecursiveDependencies : LayoutForProjectOperation
     {
         public ListRecursiveDependencies()
         {
@@ -21,7 +21,7 @@ namespace R5T.C0003.Forms.Project
         private async void RunButton_Click(object sender, EventArgs e)
         {
             await Instances.ProjectOperations.ListRecursiveProjectReferences_ToFile(
-                this.ProjectFilePath);
+                this.SelectProjectFileModel.ProjectFilePath);
         }
     }
 }

@@ -15,42 +15,18 @@ namespace R5T.C0003.Forms
 {
     public partial class LayoutForProjectOperation : LayoutForOperation
     {
-        protected string ProjectFilePath { get; set; }
+        protected SelectProjectFileModel SelectProjectFileModel { get; }
 
 
         public LayoutForProjectOperation()
         {
             InitializeComponent();
-        }
 
-        private void SelectProjectFileButton_Click(object sender, EventArgs e)
-        {
-            // Ignore the result.
-            this.ProjectFileOpenFileDialog.ShowDialog();
-
-            this.ProjectFilePathTextBox.Text = this.ProjectFileOpenFileDialog.FileName;
-        }
-
-        private void ProjectFilePathTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.ProjectFilePath = this.ProjectFilePathTextBox.Text;
-
-            var fileExists = Instances.FileSystemOperator.FileExists(
-                this.ProjectFilePath);
-
-            this.FileExistsLabel.SetTrueOrFalse(fileExists);
-
-            if(!fileExists)
-            {
-                this.IsProjectFileLabel.Reset();
-
-                return;
-            }
-
-            var isProjectFile = Instances.ProjectFileOperator.IsProjectFile(
-                this.ProjectFilePath);
-
-            this.IsProjectFileLabel.SetTrueOrFalse(isProjectFile);
+            this.SelectProjectFileModel = new SelectProjectFileModel(
+                this.SelectProjectFileButton,
+                this.ProjectFilePathTextBox,
+                this.FileExistsLabel,
+                this.IsProjectFileLabel);
         }
     }
 }

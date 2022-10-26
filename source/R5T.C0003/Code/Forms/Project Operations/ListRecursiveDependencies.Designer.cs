@@ -36,7 +36,6 @@
             // 
             this.MainGroupBox.Controls.Add(this.RunButton);
             this.MainGroupBox.Text = "Jarlshoff-List Recursive Dependencies";
-            this.MainGroupBox.Controls.SetChildIndex(this.ProjectFilePathTextBox, 0);
             this.MainGroupBox.Controls.SetChildIndex(this.RunButton, 0);
             // 
             // RunButton
@@ -63,7 +62,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button RunButton;
     }
 }

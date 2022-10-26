@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace R5T.C0003.Forms.Repository
 {
-    public partial class NewLibrary : LayoutForCreateNewRepositoryOperation
+    public sealed partial class NewLibrary : LayoutForCreateNewRepositoryOperation
     {
         private ILogger Logger { get; }
 

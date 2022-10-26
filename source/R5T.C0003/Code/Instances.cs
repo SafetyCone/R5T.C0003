@@ -10,6 +10,7 @@ using R5T.F0042;
 using R5T.F0045;
 using R5T.F0047;
 using R5T.F0063;
+using R5T.F0068;
 
 using R5T.C0003.F001;
 
@@ -18,6 +19,7 @@ namespace R5T.C0003
 {
     public static class Instances
     {
+        public static ICodeFileOperations CodeFileOperations { get; } = F0068.CodeFileOperations.Instance;
         public static IFileOperator FileOperator { get; } = F0000.FileOperator.Instance;
         public static IFilePaths FilePaths { get; } = C0003.FilePaths.Instance;
         public static IFileSystemOperator FileSystemOperator { get; } = F0000.FileSystemOperator.Instance;
@@ -33,7 +35,7 @@ namespace R5T.C0003
         public static IProjectReferencesOperator ProjectReferencesOperator { get; } = F0016.ProjectReferencesOperator.Instance;
         public static IRepositoryOperations RepositoryOperations { get; } = C0003.RepositoryOperations.Instance;
         public static F0042.IRepositoryOperator RepositoryOperator { get; } = F0042.RepositoryOperator.Instance;
-        public static ISolutionFileOperator SolutionFileOperator { get; } = F0024.SolutionFileOperator.Instance;
+        public static F0063.ISolutionFileOperator SolutionFileOperator { get; } = F0063.SolutionFileOperator.Instance;
         public static ISolutionOperations SolutionOperations { get; } = C0003.SolutionOperations.Instance;
         public static ITextOutputGenerator TextOutputGenerator { get; } = F001.TextOutputGenerator.Instance;
         public static ITreeViewNodeNames TreeViewNodeNames { get; } = C0003.TreeViewNodeNames.Instance;

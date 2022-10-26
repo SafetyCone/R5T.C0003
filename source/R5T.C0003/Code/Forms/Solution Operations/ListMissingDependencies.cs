@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace R5T.C0003.Forms.Solution
 {
-    public partial class ListMissingDependencies : LayoutForSolutionOperation
+    public sealed partial class ListMissingDependencies : LayoutForSolutionOperation
     {
         public ListMissingDependencies()
         {

@@ -1,6 +1,6 @@
-﻿namespace R5T.C0003.Forms.Repository
+﻿namespace R5T.C0003.Forms.Solution
 {
-    partial class NewLibrary
+    partial class UpdateAddXMethods
     {
         /// <summary>
         /// Required designer variable.
@@ -31,20 +31,21 @@
             this.MainGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // CreateButton
+            // RunButton
             // 
-            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
             // 
             // MainGroupBox
             // 
-            this.MainGroupBox.Text = "New Library Repository";
+            this.MainGroupBox.Text = "Update All AddX() Methods";
             // 
-            // NewLibrary
+            // UpdateAddXMethods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 400);
-            this.Name = "NewLibrary";
+            this.Name = "UpdateAddXMethods";
+            this.Text = "UpdateAddXMethods";
             this.MainGroupBox.ResumeLayout(false);
             this.MainGroupBox.PerformLayout();
             this.ResumeLayout(false);

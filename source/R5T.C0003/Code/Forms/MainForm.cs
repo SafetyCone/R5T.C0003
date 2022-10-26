@@ -56,14 +56,18 @@ namespace R5T.C0003.Forms
             var panelFormConstructorsByTreeViewNodeName = new Dictionary<string, Func<Form>>
             {
                 { Instances.TreeViewNodeNames.AddMissingDependenciesSolutionNode, () => new Solution.AddMissingDependencies() },
+                { Instances.TreeViewNodeNames.AddServiceDefinitionToProjectNode, () => new Project.AddServiceDefinition() },
                 { Instances.TreeViewNodeNames.CreateLibraryRepositoryNode, () =>  this.ServiceProvider.GetRequiredService<Repository.NewLibrary>() },
                 { Instances.TreeViewNodeNames.ListAllDependenciesSolutionNode, () => new Solution.ListAllDependencies() },
-                { Instances.TreeViewNodeNames.ListMissingDependenciesSolutionNode, () => new Solution.ListMissingDependencies() },
+                { Instances.TreeViewNodeNames.ListDependencyChainsProjectNode, () => new Project.ListDependencyChains() },
                 { Instances.TreeViewNodeNames.ListRecursiveDependenciesProjectNode, () => new Project.ListRecursiveDependencies() },
                 { Instances.TreeViewNodeNames.NewConsoleRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewConsole>() },
                 { Instances.TreeViewNodeNames.NewProgramAsServiceRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewConsoleProgramAsService>() },
                 { Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode, () => this.ServiceProvider.GetRequiredService<Repository.NewWebApplication>() },
                 { Instances.TreeViewNodeNames.RepositoryExistsNode, () => new Repository.RepositoryExists() },
+                { Instances.TreeViewNodeNames.RemoveExtraneousDependenciesSolutionNode, () => new Solution.RemoveExtraneousDependencies() },
+                { Instances.TreeViewNodeNames.UpdateAddXMethodsProjectNode, () => new Project.UpdateAddXMethods() },
+                { Instances.TreeViewNodeNames.UpdateAddXMethodsSolutionNode, () => new Solution.UpdateAddXMethods() },
             };
 
             var selectedNodeName = e.Node.Name;

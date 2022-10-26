@@ -10,8 +10,6 @@ namespace R5T.C0003
 	public partial interface ISolutionOperations : IFunctionalityMarker,
 		F0063.ISolutionOperations
 	{
-
-
 		public async Task ListMissingDependencies(
 			string solutionFilePath)
         {
