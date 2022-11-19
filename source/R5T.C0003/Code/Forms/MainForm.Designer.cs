@@ -34,33 +34,47 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("New Console");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("New Program-as-Service");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("New Web Application");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Repository", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("New Repository Only");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Repository", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Virconium-Add Missing Project Dependencies");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("List Missing Project Dependencies");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("List All Project Dependencies");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Remove Extraneous Dependencies");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Update AddX() Methods");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Solution", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Virconium-Add Missing Project Dependencies");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("List Missing Project Dependencies");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("List All Project Dependencies");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Remove Extraneous Dependencies");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Update AddX() Methods");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Solution", new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode9,
             treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Jarlshof-List Recursive Dependencies");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("List Dependency Chains");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Update AddX() Methods");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Add Service Definition");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Project", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
+            treeNode11,
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Jarlshof-List Recursive Dependencies");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("List Dependency Chains");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Update AddX() Methods");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Add Service Definition");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Identify Extraneous Project References");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Remove Extraneous Project References");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Project", new System.Windows.Forms.TreeNode[] {
             treeNode14,
             treeNode15,
-            treeNode16});
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Code");
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Code");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Create Bucket");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Generate Bucket Name");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("AWS S3", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
+            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("New Guid");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Miscellaneous", new System.Windows.Forms.TreeNode[] {
+            treeNode25});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.OperationsTreeView = new System.Windows.Forms.TreeView();
             this.OperationPanel = new System.Windows.Forms.Panel();
@@ -90,37 +104,55 @@
             treeNode4.Text = "New Program-as-Service";
             treeNode5.Name = "NewWebApplicationRepositoryNode";
             treeNode5.Text = "New Web Application";
-            treeNode6.Name = "RepositoryOperationsNode";
-            treeNode6.Text = "Repository";
-            treeNode7.Name = "AddMissingDependenciesSolutionNode";
-            treeNode7.Text = "Virconium-Add Missing Project Dependencies";
-            treeNode8.Name = "ListMissingDependenciesSolutionNode";
-            treeNode8.Text = "List Missing Project Dependencies";
-            treeNode9.Name = "ListAllDependenciesSolutionNode";
-            treeNode9.Text = "List All Project Dependencies";
-            treeNode10.Name = "RemoveExtraneousDependenciesSolutionNode";
-            treeNode10.Text = "Remove Extraneous Dependencies";
-            treeNode11.Name = "UpdateAddXMethodsSolutionNode";
-            treeNode11.Text = "Update AddX() Methods";
-            treeNode12.Name = "SolutionOperationsNode";
-            treeNode12.Text = "Solution";
-            treeNode13.Name = "ListRecursiveDependenciesProjectNode";
-            treeNode13.Text = "Jarlshof-List Recursive Dependencies";
-            treeNode14.Name = "ListDependencyChainsProjectNode";
-            treeNode14.Text = "List Dependency Chains";
-            treeNode15.Name = "UpdateAddXMethodsProjectNode";
-            treeNode15.Text = "Update AddX() Methods";
-            treeNode16.Name = "AddServiceDefinitionToProjectNode";
-            treeNode16.Text = "Add Service Definition";
-            treeNode17.Name = "ProjectOperationsNode";
-            treeNode17.Text = "Project";
-            treeNode18.Name = "CodeOperationsNode";
-            treeNode18.Text = "Code";
+            treeNode6.Name = "NewRepositoryOnlyNode";
+            treeNode6.Text = "New Repository Only";
+            treeNode7.Name = "RepositoryOperationsNode";
+            treeNode7.Text = "Repository";
+            treeNode8.Name = "AddMissingDependenciesSolutionNode";
+            treeNode8.Text = "Virconium-Add Missing Project Dependencies";
+            treeNode9.Name = "ListMissingDependenciesSolutionNode";
+            treeNode9.Text = "List Missing Project Dependencies";
+            treeNode10.Name = "ListAllDependenciesSolutionNode";
+            treeNode10.Text = "List All Project Dependencies";
+            treeNode11.Name = "RemoveExtraneousDependenciesSolutionNode";
+            treeNode11.Text = "Remove Extraneous Dependencies";
+            treeNode12.Name = "UpdateAddXMethodsSolutionNode";
+            treeNode12.Text = "Update AddX() Methods";
+            treeNode13.Name = "SolutionOperationsNode";
+            treeNode13.Text = "Solution";
+            treeNode14.Name = "ListRecursiveDependenciesProjectNode";
+            treeNode14.Text = "Jarlshof-List Recursive Dependencies";
+            treeNode15.Name = "ListDependencyChainsProjectNode";
+            treeNode15.Text = "List Dependency Chains";
+            treeNode16.Name = "UpdateAddXMethodsProjectNode";
+            treeNode16.Text = "Update AddX() Methods";
+            treeNode17.Name = "AddServiceDefinitionToProjectNode";
+            treeNode17.Text = "Add Service Definition";
+            treeNode18.Name = "IdentifyExtraneousProjectReferencesNode";
+            treeNode18.Text = "Identify Extraneous Project References";
+            treeNode19.Name = "RemoveExtraneousProjectReferencesNode";
+            treeNode19.Text = "Remove Extraneous Project References";
+            treeNode20.Name = "ProjectOperationsNode";
+            treeNode20.Text = "Project";
+            treeNode21.Name = "CodeOperationsNode";
+            treeNode21.Text = "Code";
+            treeNode22.Name = "CreateS3BucketNode";
+            treeNode22.Text = "Create Bucket";
+            treeNode23.Name = "GenerateS3BucketNameOperation";
+            treeNode23.Text = "Generate Bucket Name";
+            treeNode24.Name = "S3OperationsNode";
+            treeNode24.Text = "AWS S3";
+            treeNode25.Name = "NewGuidNode";
+            treeNode25.Text = "New Guid";
+            treeNode26.Name = "MiscellaneousOperationsNode";
+            treeNode26.Text = "Miscellaneous";
             this.OperationsTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode12,
-            treeNode17,
-            treeNode18});
+            treeNode7,
+            treeNode13,
+            treeNode20,
+            treeNode21,
+            treeNode24,
+            treeNode26});
             this.OperationsTreeView.Size = new System.Drawing.Size(284, 404);
             this.OperationsTreeView.TabIndex = 0;
             this.OperationsTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OperationsTreeView_AfterSelect);

@@ -34,6 +34,7 @@ namespace R5T.C0003
                 .AddTransient<Forms.Repository.NewConsole>()
                 .AddTransient<Forms.Repository.NewConsoleProgramAsService>()
                 .AddTransient<Forms.Repository.NewLibrary>()
+                .AddTransient<Forms.Repository.NewRepositoryOnly>()
                 .AddTransient<Forms.Repository.NewWebApplication>()
                 ;
 

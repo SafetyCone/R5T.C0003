@@ -10,6 +10,34 @@ namespace R5T.C0003
 	[FunctionalityMarker]
 	public partial interface IProjectOperations : IFunctionalityMarker
 	{
+        public async Task RemoveExtraneousProjectReferencesFromAllRecursiveReferences(
+            string projectFilePath)
+        {
+            var extraneousProjectReferencesByProject = await F0016.F001.ProjectReferencesOperator.Instance.RemoveExtraneousProjectReferencesFromAllRecursiveReferences(
+                projectFilePath);
+
+            F0016.OutputOperations.Instance.WriteToOutput_Synchronous(
+                extraneousProjectReferencesByProject,
+                Z0015.FilePaths.Instance.OutputTextFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(
+                Z0015.FilePaths.Instance.OutputTextFilePath);
+        }
+
+        public async Task OutputOnlyExtraneousProjectReferences(
+            string projectFilePath)
+        {
+            var extraneousProjectReferencesByProject = await F0016.F001.ProjectReferencesOperator.Instance.GetExtraneousProjectReferencesOnlyForRecursiveReferencesWithExtranousReferences(
+                projectFilePath);
+
+            F0016.OutputOperations.Instance.WriteToOutput_Synchronous(
+                extraneousProjectReferencesByProject,
+                Z0015.FilePaths.Instance.OutputTextFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(
+                Z0015.FilePaths.Instance.OutputTextFilePath);
+        }
+
         public void CreateServiceDefinition(
             string projectFilePath,
             string serviceDefinitionInterfaceTypeName)

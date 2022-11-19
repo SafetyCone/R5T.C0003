@@ -75,7 +75,7 @@ namespace R5T.C0003
             // Ignore the result.
             var dialogResult = projectFileOpenFileDialog.ShowDialog();
 
-            if(dialogResult == DialogResult.OK && projectFileOpenFileDialog.FileName.IsNonNullOrEmpty())
+            if(dialogResult == DialogResult.OK && projectFileOpenFileDialog.FileName.IsNotNullAndNotEmpty())
             {
                 this.ProjectFilePathTextBox.Text = projectFileOpenFileDialog.FileName;
             }
