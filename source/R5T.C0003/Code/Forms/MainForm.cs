@@ -57,6 +57,7 @@ namespace R5T.C0003.Forms
             {
                 { Instances.TreeViewNodeNames.AddMissingDependenciesSolutionNode, () => new Solution.AddMissingDependencies() },
                 { Instances.TreeViewNodeNames.AddServiceDefinitionToProjectNode, () => new Project.AddServiceDefinition() },
+                { Instances.TreeViewNodeNames.AddStronglyTypedTypeNode, () => new Project.AddStronglyTypedType() },
                 { Instances.TreeViewNodeNames.CreateLibraryRepositoryNode, () =>  this.ServiceProvider.GetRequiredService<Repository.NewLibrary>() },
                 { Instances.TreeViewNodeNames.GenerateS3BucketNameOperation, () =>  new AWS.S3.GenerateBucketName() },
                 { Instances.TreeViewNodeNames.IdentifyExtraneousProjectReferencesNode, () =>  new Project.IdentifyExtraneousProjectReferences() },

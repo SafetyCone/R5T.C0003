@@ -10,7 +10,8 @@ namespace R5T.C0003
 	{
 		public string AddMissingDependenciesSolutionNode => "AddMissingDependenciesSolutionNode";
 		public string AddServiceDefinitionToProjectNode => "AddServiceDefinitionToProjectNode";
-		public string CodeOperationsNode => "CodeOperationsNode";
+		public string AddStronglyTypedTypeNode => "AddStronglyTypedTypeNode";
+        public string CodeOperationsNode => "CodeOperationsNode";
 		public string CreateLibraryRepositoryNode => "CreateLibraryRepositoryNode";
 		public string CreateS3BucketNode => "CreateS3BucketNode";
 		public string GenerateS3BucketNameOperation => "GenerateS3BucketNameOperation";
