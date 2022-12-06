@@ -27,10 +27,10 @@ namespace R5T.C0003.Forms.Project
 
             Func<string, string, string, string, bool, Task> createStronglyTypedTypeCodeFileFunction = baseTypeName switch
             {
-                "TypedDouble" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedDouble,
-                "TypedGuid" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedGuid,
-                "TypedInteger" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedInteger,
-                "TypedString" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedString,
+                "Double" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedDouble,
+                "Guid" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedGuid,
+                "Integer" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedInteger,
+                "String" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedString,
                 _ => throw F0000.SwitchOperator.Instance.GetUnrecognizedSwitchValueException(baseTypeName)
             };
 

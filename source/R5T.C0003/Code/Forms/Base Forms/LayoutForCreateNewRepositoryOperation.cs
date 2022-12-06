@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 using Microsoft.Extensions.Logging;
 
+using R5T.F0000;
+using R5T.F0034;
+
 
 namespace R5T.C0003.Forms.Repository
 {
@@ -36,14 +39,14 @@ namespace R5T.C0003.Forms.Repository
         {
             var url = this.RemoteRepositoryLinkLabel.Text;
 
-            F0000.UrlOperator.Instance.OpenInBrowser(url);
+            UrlOperator.Instance.OpenInBrowser(url);
         }
 
         private void LocalRepositoryLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var path = this.LocalRepositoryLinkLabel.Text;
 
-            F0034.WindowsExplorerOperator.Instance.OpenDirectoryInExplorer(path);
+            WindowsExplorerOperator.Instance.OpenDirectoryInExplorer(path);
         }
 
         protected void SetRemoteRepositoryUrl(string remoteRepositoryUrl)

@@ -26,7 +26,8 @@ namespace R5T.C0003
         public string NewProgramAsServiceRepositoryNode => "NewProgramAsServiceRepositoryNode";
 		public string NewRepositoryOnlyNode => "NewRepositoryOnlyNode";
 		public string NewWebApplicationRepositoryNode => "NewWebApplicationRepositoryNode";
-		public string ProjectOperationsNode => "ProjectOperationsNode";
+		public string NewWebStaticRazorComponents => "NewWebStaticRazorComponents";
+        public string ProjectOperationsNode => "ProjectOperationsNode";
 		public string RemoveExtraneousDependenciesSolutionNode => "RemoveExtraneousDependenciesSolutionNode";
 		public string RemoveExtraneousProjectReferencesNode => "RemoveExtraneousProjectReferencesNode";
 		public string RepositoryExistsNode => "RepositoryExistsNode";

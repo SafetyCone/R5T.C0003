@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using R5T.F0047;
+
 
 namespace R5T.C0003.Forms
 {
@@ -17,17 +19,28 @@ namespace R5T.C0003.Forms
         {
             InitializeComponent();
 
-            this.OwnerNameSelectorComboBox.Items.AddRange(new[]
-            {
-                Instances.GitHubOwnerNames.DavidCoats,
-                Instances.GitHubOwnerNames.SafetyCone
-            });
+            //this.Setup();
         }
 
-        private void LayoutForRepositoryOperation_Shown(object sender, EventArgs e)
+        /// <summary>
+        /// Use a setup method to keep code in non-direct project references of the WinForms project off the WinForms designer initialization pathway.
+        /// This method is called from the main form generation.
+        /// </summary>
+        public void Setup()
         {
-            this.OwnerNameSelectorComboBox.SelectedItem = Instances.GitHubOwnerNames.SafetyCone;
+            this.OwnerNameSelectorComboBox.Items.AddRange(new string[]
+            {
+                GitHubOwnerNames.Instance.DavidCoats,
+                GitHubOwnerNames.Instance.SafetyCone
+            });
+
+            this.OwnerNameSelectorComboBox.SelectedItem = GitHubOwnerNames.Instance.SafetyCone;
         }
+
+        //private void LayoutForRepositoryOperation_Shown(object sender, EventArgs e)
+        //{
+        //    this.OwnerNameSelectorComboBox.SelectedItem = GitHubOwnerNames.Instance.SafetyCone;
+        //}
 
         protected string GetGitHubOwnerName()
         {
@@ -39,7 +52,7 @@ namespace R5T.C0003.Forms
         {
             var gitHubOwnerName = this.GetGitHubOwnerName();
 
-            var gitHubOwner = Instances.GitHubOwnerOperator.GetGitHubOwner(gitHubOwnerName);
+            var gitHubOwner = GitHubOwnerOperator.Instance.GetGitHubOwner(gitHubOwnerName);
             return gitHubOwner;
         }
 

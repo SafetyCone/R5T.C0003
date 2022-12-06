@@ -67,10 +67,10 @@
             this.BaseTypeSelectionComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BaseTypeSelectionComboBox.FormattingEnabled = true;
             this.BaseTypeSelectionComboBox.Items.AddRange(new object[] {
-            "TypedDouble",
-            "TypedGuid",
-            "TypedInteger",
-            "TypedString"});
+            "Double",
+            "Guid",
+            "Integer",
+            "String"});
             this.BaseTypeSelectionComboBox.Location = new System.Drawing.Point(13, 184);
             this.BaseTypeSelectionComboBox.Name = "BaseTypeSelectionComboBox";
             this.BaseTypeSelectionComboBox.Size = new System.Drawing.Size(191, 29);

@@ -112,7 +112,7 @@
             this.ClientSize = new System.Drawing.Size(500, 400);
             this.Name = "LayoutForRepositoryOperation";
             this.Text = "LayoutForRepositoryOperation";
-            this.Shown += new System.EventHandler(this.LayoutForRepositoryOperation_Shown);
+            //this.Shown += new System.EventHandler(this.LayoutForRepositoryOperation_Shown);
             this.MainGroupBox.ResumeLayout(false);
             this.MainGroupBox.PerformLayout();
             this.ResumeLayout(false);
