@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace R5T.C0003.Forms.Repository
 {
-    public sealed partial class RepositoryExists : LayoutForRepositoryOperation
+    public sealed partial class RepositoryExists : LayoutForRepositoryOperation, IHasNonWinFormsDesginerSetup
     {
         public RepositoryExists()
         {

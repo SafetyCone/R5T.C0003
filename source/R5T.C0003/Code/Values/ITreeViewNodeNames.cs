@@ -8,9 +8,16 @@ namespace R5T.C0003
 	[ValuesMarker]
 	public partial interface ITreeViewNodeNames : IValuesMarker
 	{
-		public string AddMissingDependenciesSolutionNode => "AddMissingDependenciesSolutionNode";
-		public string AddServiceDefinitionToProjectNode => "AddServiceDefinitionToProjectNode";
+		public string AddClassToProjectNode => "AddClassToProjectNode";
+		public string AddInterfaceToProjectNode => "AddInterfaceToProjectNode";
+		public string AddInstancesProjectNode => "AddInstancesProjectNode";
+		public string AddInstanceProjectNode => "AddInstanceProjectNode";
+        public string AddMissingDependenciesSolutionNode => "AddMissingDependenciesSolutionNode";
+		public string AddProjectDependencyProjectNode => "AddProjectDependencyProjectNode";
+        public string AddRazorComponentProjectNode => "AddRazorComponentProjectNode";
+        public string AddServiceDefinitionToProjectNode => "AddServiceDefinitionToProjectNode";
 		public string AddStronglyTypedTypeNode => "AddStronglyTypedTypeNode";
+		public string AddWinFormProjectNode => "AddWinFormProjectNode";
         public string CodeOperationsNode => "CodeOperationsNode";
 		public string CreateLibraryRepositoryNode => "CreateLibraryRepositoryNode";
 		public string CreateS3BucketNode => "CreateS3BucketNode";
@@ -27,13 +34,17 @@ namespace R5T.C0003
 		public string NewRepositoryOnlyNode => "NewRepositoryOnlyNode";
 		public string NewWebApplicationRepositoryNode => "NewWebApplicationRepositoryNode";
 		public string NewWebStaticRazorComponents => "NewWebStaticRazorComponents";
+		public string NewWinFormsApplicationRepositoryNode => "NewWinFormsApplicationRepositoryNode";
         public string ProjectOperationsNode => "ProjectOperationsNode";
 		public string RemoveExtraneousDependenciesSolutionNode => "RemoveExtraneousDependenciesSolutionNode";
 		public string RemoveExtraneousProjectReferencesNode => "RemoveExtraneousProjectReferencesNode";
 		public string RepositoryExistsNode => "RepositoryExistsNode";
 		public string RepositoryOperationsNode => "RepositoryOperationsNode";
-		public string SolutionOperationsNode => "SolutionOperationsNode";
+		public string S3OperationsNode => "S3OperationsNode";
+        public string SolutionOperationsNode => "SolutionOperationsNode";
 		public string UpdateAddXMethodsProjectNode => "UpdateAddXMethodsProjectNode";
 		public string UpdateAddXMethodsSolutionNode => "UpdateAddXMethodsSolutionNode";
-	}
+		public string UpdateToVs2022SolutionNode => "UpdateToVs2022SolutionNode";
+
+    }
 }

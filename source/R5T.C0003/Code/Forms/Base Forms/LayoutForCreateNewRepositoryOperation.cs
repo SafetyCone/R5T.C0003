@@ -16,6 +16,15 @@ using R5T.F0034;
 
 namespace R5T.C0003.Forms.Repository
 {
+    public delegate Task<TCreateRepositoryResult> CreateRepositoryAction<TCreateRepositoryResult>(
+        string repositoryName,
+        string repositoryDescription,
+        string gitHubOwner,
+        bool isPrivate,
+        ILogger logger)
+        where TCreateRepositoryResult : F0093.ICreateRepositoryResult;
+
+
     public partial class LayoutForCreateNewRepositoryOperation : LayoutForRepositoryOperation
     {
         public LayoutForCreateNewRepositoryOperation()
@@ -57,6 +66,39 @@ namespace R5T.C0003.Forms.Repository
         protected void SetLocalRepositoryDirectoryPath(string localRepositoryDirectoryPath)
         {
             this.LocalRepositoryLinkLabel.Text = localRepositoryDirectoryPath;
+        }
+
+        protected async Task<TCreateSolutionRepositoryResult> CreateRepository<TCreateSolutionRepositoryResult>(
+            CreateRepositoryAction<TCreateSolutionRepositoryResult> createRepositoryAction,
+            ILogger logger)
+            where TCreateSolutionRepositoryResult : F0093.ICreateRepositoryResult
+        {
+            var repositoryName = this.GetRepositoryName();
+            var gitHubOwner = this.GetGitHubOwner();
+            var description = this.GetDescription();
+            var isPrivate = this.GetIsPrivate();
+
+            TCreateSolutionRepositoryResult createSolutionRepositoryResult = default;
+
+            async Task Internal()
+            {
+                var createSolutionRepositoryResult = await createRepositoryAction(
+                    repositoryName,
+                    description,
+                    gitHubOwner,
+                    isPrivate,
+                    logger);
+
+                this.SetRemoteRepositoryUrl(createSolutionRepositoryResult.RemoteRepositoryUrl);
+                this.SetLocalRepositoryDirectoryPath(createSolutionRepositoryResult.LocalDirectoryPath);
+
+                F0088.VisualStudioOperator.Instance.OpenSolutionFile(
+                    createSolutionRepositoryResult.SolutionFilePath);
+            }
+
+            await TryOperator.Instance.TryShowDoneOrExceptionMessage(Internal);
+
+            return createSolutionRepositoryResult;
         }
     }
 }

@@ -17,6 +17,21 @@ namespace R5T.C0003.Forms
 {
     public partial class MainForm : Form, IHasNotifyIcon
     {
+        #region Static
+
+        private static TRepositoryOperation GetRepositoryOperation<TRepositoryOperation>()
+            where TRepositoryOperation : IHasNonWinFormsDesginerSetup, new()
+        {
+            var output = new TRepositoryOperation();
+
+            output.Setup();
+
+            return output;
+        }
+
+        #endregion
+
+
         private IServiceProvider ServiceProvider { get; }
 
         NotifyIcon IHasNotifyIcon.NotifyIcon => this.NotifyIcon;
@@ -35,6 +50,8 @@ namespace R5T.C0003.Forms
             this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.RepositoryOperationsNode].Expand();
             this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.SolutionOperationsNode].Expand();
             this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.ProjectOperationsNode].Expand();
+            this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.S3OperationsNode].Expand();
+            this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.MiscellaneousOperationsNode].Expand();
         }
 
         public void SelectOperationNode(string nodeName)
@@ -61,23 +78,20 @@ namespace R5T.C0003.Forms
             return output;
         }
 
-        private TRepositoryOperation GetRepositoryOperation<TRepositoryOperation>()
-            where TRepositoryOperation : LayoutForRepositoryOperation, new()
-        {
-            var output = new TRepositoryOperation();
-
-            output.Setup();
-
-            return output;
-        }
-
         private void OperationsTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             var panelFormConstructorsByTreeViewNodeName = new Dictionary<string, Func<Form>>
             {
+                { Instances.TreeViewNodeNames.AddClassToProjectNode, () => new Project.AddClass() },
+                { Instances.TreeViewNodeNames.AddInterfaceToProjectNode, () => new Project.AddInterface() },
+                { Instances.TreeViewNodeNames.AddInstancesProjectNode, () => new Project.AddInstancesClass() },
+                { Instances.TreeViewNodeNames.AddInstanceProjectNode, () => MainForm.GetRepositoryOperation<Project.AddInstance>() },
                 { Instances.TreeViewNodeNames.AddMissingDependenciesSolutionNode, () => new Solution.AddMissingDependencies() },
+                { Instances.TreeViewNodeNames.AddProjectDependencyProjectNode, () => new Project.AddProjectDependency() },
                 { Instances.TreeViewNodeNames.AddServiceDefinitionToProjectNode, () => new Project.AddServiceDefinition() },
                 { Instances.TreeViewNodeNames.AddStronglyTypedTypeNode, () => new Project.AddStronglyTypedType() },
+                { Instances.TreeViewNodeNames.AddRazorComponentProjectNode, () => new Project.AddRazorComponent() },
+                { Instances.TreeViewNodeNames.AddWinFormProjectNode, () => new Project.AddWinForm() },
                 { Instances.TreeViewNodeNames.CreateLibraryRepositoryNode, () => this.GetRepositoryOperationAsService<Repository.NewLibrary>() },
                 { Instances.TreeViewNodeNames.GenerateS3BucketNameOperation, () =>  new AWS.S3.GenerateBucketName() },
                 { Instances.TreeViewNodeNames.IdentifyExtraneousProjectReferencesNode, () =>  new Project.IdentifyExtraneousProjectReferences() },
@@ -89,12 +103,14 @@ namespace R5T.C0003.Forms
                 { Instances.TreeViewNodeNames.NewProgramAsServiceRepositoryNode, () => this.GetRepositoryOperationAsService<Repository.NewConsoleProgramAsService>() },
                 { Instances.TreeViewNodeNames.NewRepositoryOnlyNode, () => this.GetRepositoryOperationAsService<Repository.NewRepositoryOnly>() },
                 { Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode, () => this.GetRepositoryOperationAsService<Repository.NewWebApplication>() },
-                { Instances.TreeViewNodeNames.NewWebStaticRazorComponents, () => this.GetRepositoryOperation<Repository.NewWebStaticRazorComponents>() },
-                { Instances.TreeViewNodeNames.RepositoryExistsNode, () => this.GetRepositoryOperation<Repository.RepositoryExists>() },
+                { Instances.TreeViewNodeNames.NewWebStaticRazorComponents, () => this.GetRepositoryOperationAsService<Repository.NewWebStaticRazorComponents>() },
+                { Instances.TreeViewNodeNames.NewWinFormsApplicationRepositoryNode, () => this.GetRepositoryOperationAsService<Repository. NewWinFormsApplication>() },
+                { Instances.TreeViewNodeNames.RepositoryExistsNode, () => MainForm.GetRepositoryOperation<Repository.RepositoryExists>() },
                 { Instances.TreeViewNodeNames.RemoveExtraneousDependenciesSolutionNode, () => new Solution.RemoveExtraneousDependencies() },
                 { Instances.TreeViewNodeNames.RemoveExtraneousProjectReferencesNode, () => new Project.RemoveExtraneousProjectReferences() },
                 { Instances.TreeViewNodeNames.UpdateAddXMethodsProjectNode, () => new Project.UpdateAddXMethods() },
                 { Instances.TreeViewNodeNames.UpdateAddXMethodsSolutionNode, () => new Solution.UpdateAddXMethods() },
+                { Instances.TreeViewNodeNames.UpdateToVs2022SolutionNode, () => new Solution.UpgradeToVS2022() },
             };
 
             var selectedNodeName = e.Node.Name;
@@ -110,11 +126,11 @@ namespace R5T.C0003.Forms
 
             var panelForm = constructor();
 
-            // Handle any setup that must be off the WinForms designer initialzation path.
-            if(panelForm is IHasNonWinFormsDesginerSetup hasNonWinFormsDesginerSetup)
-            {
-                hasNonWinFormsDesginerSetup.Setup();
-            }
+            //// Handle any setup that must be off the WinForms designer initialzation path.
+            //if(panelForm is IHasNonWinFormsDesginerSetup hasNonWinFormsDesginerSetup)
+            //{
+            //    hasNonWinFormsDesginerSetup.Setup();
+            //}
 
             // Set panel form.
             // Clear all first.

@@ -1,8 +1,6 @@
 using System;
 using System.Windows.Forms;
 
-using Microsoft.Extensions.Logging;
-
 using R5T.C0003.Forms;
 
 
@@ -12,21 +10,15 @@ namespace R5T.C0003
     {
         private MainForm MainForm { get; }
 
-        private ILogger Logger { get; }
 
-
-        public Program(
-            MainForm mainForm,
-            ILogger<Program> logger)
+        public Program(MainForm mainForm)
         {
             this.MainForm = mainForm;
-
-            this.Logger = logger;
         }
 
         public static void Testing(MainForm mainForm)
         {
-            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.AddStronglyTypedTypeNode);
+            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.NewWinFormsApplicationRepositoryNode);
         }
 
         [STAThread]

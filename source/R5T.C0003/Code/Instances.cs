@@ -15,25 +15,26 @@ namespace R5T.C0003
 {
     public static class Instances
     {
-        public static ICodeFileOperations CodeFileOperations { get; } = F0068.CodeFileOperations.Instance;
-        public static IFileOperator FileOperator { get; } = F0000.FileOperator.Instance;
-        public static IFilePaths FilePaths { get; } = C0003.FilePaths.Instance;
-        public static IFileSystemOperator FileSystemOperator { get; } = F0000.FileSystemOperator.Instance;
-        public static IGitHubOperator GitHubOperator { get; } = F0041.GitHubOperator.Instance;
-        public static IGitHubOwnerNames GitHubOwnerNames { get; } = F0047.GitHubOwnerNames.Instance;
-        public static IGitHubOwnerOperator GitHubOwnerOperator { get; } = F0047.GitHubOwnerOperator.Instance;
-        public static IGitHubOwners GitHubOwners { get; } = F0047.GitHubOwners.Instance;
-        public static ILogFilePathOperator LogFilePathOperator { get; } = C0003.LogFilePathOperator.Instance;
-        public static INotepadPlusPlusOperator NotepadPlusPlusOperator { get; } = F0033.NotepadPlusPlusOperator.Instance;
-        public static IOperations Operations { get; } = C0003.Operations.Instance;
-        public static IProjectFileOperator ProjectFileOperator { get; } = F0020.ProjectFileOperator.Instance;
-        public static IProjectOperations ProjectOperations { get; } = C0003.ProjectOperations.Instance;
-        public static IProjectReferencesOperator ProjectReferencesOperator { get; } = F0016.ProjectReferencesOperator.Instance;
-        public static IRepositoryOperations RepositoryOperations { get; } = C0003.RepositoryOperations.Instance;
-        public static F0042.IRepositoryOperator RepositoryOperator { get; } = F0042.RepositoryOperator.Instance;
-        public static F0063.ISolutionFileOperator SolutionFileOperator { get; } = F0063.SolutionFileOperator.Instance;
-        public static ISolutionOperations SolutionOperations { get; } = C0003.SolutionOperations.Instance;
-        public static ITextOutputGenerator TextOutputGenerator { get; } = F001.TextOutputGenerator.Instance;
-        public static ITreeViewNodeNames TreeViewNodeNames { get; } = C0003.TreeViewNodeNames.Instance;
+        public static ICodeFileOperations CodeFileOperations => F0068.CodeFileOperations.Instance;
+        public static IFileOperator FileOperator => F0000.FileOperator.Instance;
+        public static IFilePaths FilePaths => C0003.FilePaths.Instance;
+        public static IFileSystemOperator FileSystemOperator => F0000.FileSystemOperator.Instance;
+        public static IGitHubOperator GitHubOperator => F0041.GitHubOperator.Instance;
+        public static IGitHubOwnerNames GitHubOwnerNames => F0047.GitHubOwnerNames.Instance;
+        public static IGitHubOwnerOperator GitHubOwnerOperator => F0047.GitHubOwnerOperator.Instance;
+        public static IGitHubOwners GitHubOwners => F0047.GitHubOwners.Instance;
+        public static ILogFilePathOperator LogFilePathOperator => C0003.LogFilePathOperator.Instance;
+        public static INotepadPlusPlusOperator NotepadPlusPlusOperator => F0033.NotepadPlusPlusOperator.Instance;
+        public static IOperations Operations => C0003.Operations.Instance;
+        public static IProjectFileOperator ProjectFileOperator => F0020.ProjectFileOperator.Instance;
+        public static IProjectOperations ProjectOperations => C0003.ProjectOperations.Instance;
+        public static IProjectReferencesOperator ProjectReferencesOperator => F0016.ProjectReferencesOperator.Instance;
+        public static IRepositoryOperations RepositoryOperations => C0003.RepositoryOperations.Instance;
+        public static F0042.IRepositoryOperator RepositoryOperator => F0042.RepositoryOperator.Instance;
+        public static F0063.ISolutionFileOperator SolutionFileOperator => F0063.SolutionFileOperator.Instance;
+        public static F0085.ISolutionFileOperations SolutionFileOperations => F0085.SolutionFileOperations.Instance;
+        public static ISolutionOperations SolutionOperations => C0003.SolutionOperations.Instance;
+        public static ITextOutputGenerator TextOutputGenerator => F001.TextOutputGenerator.Instance;
+        public static ITreeViewNodeNames TreeViewNodeNames => C0003.TreeViewNodeNames.Instance;
     }
 }
