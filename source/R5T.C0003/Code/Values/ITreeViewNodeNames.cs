@@ -21,7 +21,8 @@ namespace R5T.C0003
         public string CodeOperationsNode => "CodeOperationsNode";
 		public string CreateLibraryRepositoryNode => "CreateLibraryRepositoryNode";
 		public string CreateS3BucketNode => "CreateS3BucketNode";
-		public string GenerateS3BucketNameOperation => "GenerateS3BucketNameOperation";
+        public string GenerateS3BucketNameOperation => "GenerateS3BucketNameOperation";
+		public string GenerateTailwindCssAllContentPathsFile => "GenerateTailwindCssAllContentPathsFile";
 		public string IdentifyExtraneousProjectReferencesNode => "IdentifyExtraneousProjectReferencesNode";
 		public string ListAllDependenciesSolutionNode => "ListAllDependenciesSolutionNode";
 		public string ListDependencyChainsProjectNode => "ListDependencyChainsProjectNode";

@@ -37,6 +37,7 @@ namespace R5T.C0003
                 .AddTransient<Forms.Repository.NewRepositoryOnly>()
                 .AddTransient<Forms.Repository.NewWebApplication>()
                 .AddTransient<Forms.Repository.NewWinFormsApplication>()
+                .AddTransient<Forms.Repository.NewWebStaticRazorComponents>()
                 ;
 
             return Task.CompletedTask;

@@ -73,7 +73,8 @@
             System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Add Instance of Type");
             System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Add Project Dependency");
             System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Add WinForm");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Project", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Generate Tailwind CSS All Content Paths File");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Project", new System.Windows.Forms.TreeNode[] {
             treeNode17,
             treeNode18,
             treeNode19,
@@ -87,16 +88,17 @@
             treeNode27,
             treeNode28,
             treeNode29,
-            treeNode30});
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Code");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Create Bucket");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Generate Bucket Name");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("AWS S3", new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34});
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("New Guid");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Miscellaneous", new System.Windows.Forms.TreeNode[] {
-            treeNode36});
+            treeNode30,
+            treeNode31});
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Code");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Create Bucket");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Generate Bucket Name");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("AWS S3", new System.Windows.Forms.TreeNode[] {
+            treeNode34,
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("New Guid");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Miscellaneous", new System.Windows.Forms.TreeNode[] {
+            treeNode37});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.OperationsTreeView = new System.Windows.Forms.TreeView();
             this.OperationPanel = new System.Windows.Forms.Panel();
@@ -176,27 +178,29 @@
             treeNode29.Text = "Add Project Dependency";
             treeNode30.Name = "AddWinFormProjectNode";
             treeNode30.Text = "Add WinForm";
-            treeNode31.Name = "ProjectOperationsNode";
-            treeNode31.Text = "Project";
-            treeNode32.Name = "CodeOperationsNode";
-            treeNode32.Text = "Code";
-            treeNode33.Name = "CreateS3BucketNode";
-            treeNode33.Text = "Create Bucket";
-            treeNode34.Name = "GenerateS3BucketNameOperation";
-            treeNode34.Text = "Generate Bucket Name";
-            treeNode35.Name = "S3OperationsNode";
-            treeNode35.Text = "AWS S3";
-            treeNode36.Name = "NewGuidNode";
-            treeNode36.Text = "New Guid";
-            treeNode37.Name = "MiscellaneousOperationsNode";
-            treeNode37.Text = "Miscellaneous";
+            treeNode31.Name = "GenerateTailwindCssAllContentPathsFile";
+            treeNode31.Text = "Generate Tailwind CSS All Content Paths File";
+            treeNode32.Name = "ProjectOperationsNode";
+            treeNode32.Text = "Project";
+            treeNode33.Name = "CodeOperationsNode";
+            treeNode33.Text = "Code";
+            treeNode34.Name = "CreateS3BucketNode";
+            treeNode34.Text = "Create Bucket";
+            treeNode35.Name = "GenerateS3BucketNameOperation";
+            treeNode35.Text = "Generate Bucket Name";
+            treeNode36.Name = "S3OperationsNode";
+            treeNode36.Text = "AWS S3";
+            treeNode37.Name = "NewGuidNode";
+            treeNode37.Text = "New Guid";
+            treeNode38.Name = "MiscellaneousOperationsNode";
+            treeNode38.Text = "Miscellaneous";
             this.OperationsTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode16,
-            treeNode31,
             treeNode32,
-            treeNode35,
-            treeNode37});
+            treeNode33,
+            treeNode36,
+            treeNode38});
             this.OperationsTreeView.Size = new System.Drawing.Size(284, 404);
             this.OperationsTreeView.TabIndex = 0;
             this.OperationsTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OperationsTreeView_AfterSelect);
