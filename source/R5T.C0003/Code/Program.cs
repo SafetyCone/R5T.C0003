@@ -18,7 +18,7 @@ namespace R5T.C0003
 
         public static void Testing(MainForm mainForm)
         {
-            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.AddStronglyTypedTypeNode);
+            mainForm.SelectOperationNode(Instances.TreeViewNodeNames.OpenRepositoryScriptsSolution);
         }
 
         [STAThread]

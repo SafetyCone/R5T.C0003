@@ -26,12 +26,32 @@
     <ProjectReference Include="..\R5T.C0003.F001\R5T.C0003.F001.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Code\Forms\Base Forms\LayoutForClickOperation.cs" />
     <Compile Update="Code\Forms\Base Forms\LayoutForProjectOperation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Code\Forms\Base Forms\LayoutForCreateNewRepositoryOperation.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenCodeElementScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenCodeFileScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenProjectFileScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenProjectScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenSolutionFileScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenSolutionScriptsSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Code\Forms\Code Operations\OpenRepositoryScriptsSolution.cs" />
     <Compile Update="Code\Forms\Project Operations\AddInterface.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -23,6 +23,19 @@ namespace R5T.C0003
 			}
 		}
 
+        public void TryOrShowMessage_Synchronous(
+            Action action = default)
+        {
+            try
+            {
+                F0000.ActionOperator.Instance.Run(action);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
         public async Task TryOrShowMessage(
             Func<Task> action = default)
         {
@@ -42,6 +55,21 @@ namespace R5T.C0003
             try
             {
                 await F0000.ActionOperator.Instance.Run(action);
+
+                MessageBox.Show("Done");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        public void TryShowDoneOrExceptionMessage_Synchronous(
+            Action action = default)
+        {
+            try
+            {
+                F0000.ActionOperator.Instance.Run(action);
 
                 MessageBox.Show("Done");
             }

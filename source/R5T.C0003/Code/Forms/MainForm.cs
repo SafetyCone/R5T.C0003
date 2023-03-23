@@ -44,8 +44,9 @@ namespace R5T.C0003.Forms
 
             this.ServiceProvider = serviceProvider;
 
-            // Discard the disengage action.
-            _ = F0062.NotifyIconOperator.Instance.EngageMinimizeToSystemTray(this);
+            // Minimize to system tray.
+            //// Discard the disengage action.
+            //_ = F0062.NotifyIconOperator.Instance.EngageMinimizeToSystemTray(this);
 
             this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.RepositoryOperationsNode].Expand();
             this.OperationsTreeView.Nodes[Instances.TreeViewNodeNames.SolutionOperationsNode].Expand();
@@ -106,6 +107,13 @@ namespace R5T.C0003.Forms
                 { Instances.TreeViewNodeNames.NewWebApplicationRepositoryNode, () => this.GetRepositoryOperationAsService<Repository.NewWebApplication>() },
                 { Instances.TreeViewNodeNames.NewWebStaticRazorComponents, () => this.GetRepositoryOperationAsService<Repository.NewWebStaticRazorComponents>() },
                 { Instances.TreeViewNodeNames.NewWinFormsApplicationRepositoryNode, () => this.GetRepositoryOperationAsService<Repository.NewWinFormsApplication>() },
+                { Instances.TreeViewNodeNames.OpenCodeElementScriptsSolution, () => new Code.OpenCodeElementScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenCodeFileScriptsSolution, () => new Code.OpenCodeFileScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenProjectFileScriptsSolution, () => new Code.OpenProjectFileScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenProjectScriptsSolution, () => new Code.OpenProjectScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenRepositoryScriptsSolution, () => new Code.OpenRepositoryScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenSolutionFileScriptsSolution, () => new Code.OpenSolutionFileScriptsSolution() },
+                { Instances.TreeViewNodeNames.OpenSolutionScriptsSolution, () => new Code.OpenSolutionScriptsSolution() },
                 { Instances.TreeViewNodeNames.RepositoryExistsNode, () => MainForm.GetRepositoryOperation<Repository.RepositoryExists>() },
                 { Instances.TreeViewNodeNames.RemoveExtraneousDependenciesSolutionNode, () => new Solution.RemoveExtraneousDependencies() },
                 { Instances.TreeViewNodeNames.RemoveExtraneousProjectReferencesNode, () => new Project.RemoveExtraneousProjectReferences() },

@@ -36,6 +36,13 @@ namespace R5T.C0003
 		public string NewWebApplicationRepositoryNode => "NewWebApplicationRepositoryNode";
 		public string NewWebStaticRazorComponents => "NewWebStaticRazorComponents";
 		public string NewWinFormsApplicationRepositoryNode => "NewWinFormsApplicationRepositoryNode";
+        public string OpenCodeElementScriptsSolution => "OpenCodeElementScriptsSolution";
+        public string OpenCodeFileScriptsSolution => "OpenCodeFileScriptsSolution";
+        public string OpenProjectFileScriptsSolution => "OpenProjectFileScriptsSolution";
+        public string OpenProjectScriptsSolution => "OpenProjectScriptsSolution";
+        public string OpenRepositoryScriptsSolution => "OpenRepositoryScriptsSolution";
+        public string OpenSolutionFileScriptsSolution => "OpenSolutionFileScriptsSolution";
+        public string OpenSolutionScriptsSolution => "OpenSolutionScriptsSolution";
         public string ProjectOperationsNode => "ProjectOperationsNode";
 		public string RemoveExtraneousDependenciesSolutionNode => "RemoveExtraneousDependenciesSolutionNode";
 		public string RemoveExtraneousProjectReferencesNode => "RemoveExtraneousProjectReferencesNode";
