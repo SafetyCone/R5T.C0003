@@ -9,6 +9,6 @@ namespace R5T.C0003
 	public partial interface IFilePaths : IValuesMarker,
 		Z0015.IFilePaths
 	{
-		public string LogFilePath => @"C:\Temp\Log.txt";
+		
 	}
 }

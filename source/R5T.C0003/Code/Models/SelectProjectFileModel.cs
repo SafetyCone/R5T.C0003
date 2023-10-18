@@ -85,7 +85,7 @@ namespace R5T.C0003
         {
             this.ProjectFilePath = this.ProjectFilePathTextBox.Text;
 
-            var fileExists = Instances.FileSystemOperator.FileExists(
+            var fileExists = Instances.FileSystemOperator.Exists_File(
                 this.ProjectFilePath);
 
             this.FileExistsLabel.SetTrueOrFalse(fileExists);

@@ -29,5 +29,6 @@ namespace R5T.C0003
         public static ITreeViewNodeNames TreeViewNodeNames => C0003.TreeViewNodeNames.Instance;
         public static ITryOperator TryOperator => C0003.TryOperator.Instance;
         public static F0088.IVisualStudioOperator VisualStudioOperator => F0088.VisualStudioOperator.Instance;
+        public static F0034.IWindowsExplorerOperator WindowsExplorerOperator => F0034.WindowsExplorerOperator.Instance;
     }
 }

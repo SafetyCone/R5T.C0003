@@ -53,7 +53,7 @@ namespace R5T.C0003
             var namespaceName = F0040.F000.ProjectNamespacesOperator.Instance.GetDefaultNamespaceName(projectFilePath);
 
             // Create the service definition.
-            F0000.FileSystemOperator.Instance.EnsureDirectoryForFilePathExists(
+            F0000.FileSystemOperator.Instance.Ensure_DirectoryExists_ForFilePath(
                 serviceDefinitionCodeFilePath);
 
             F0053.CodeFileGenerator.Instance.CreateServiceDefinition(
@@ -87,7 +87,7 @@ namespace R5T.C0003
                 dependencyProjectFilePath,
                 dependencyChains_Inclusive);
 
-            Instances.FileOperator.WriteLines_Synchronous(
+            Instances.FileOperator.Write_Lines_Synchronous(
                 Instances.FilePaths.OutputTextFilePath,
                 lines);
 
@@ -108,7 +108,7 @@ namespace R5T.C0003
                     .OrderAlphabetically())
                 ;
 
-            Instances.FileOperator.WriteLines_Synchronous(
+            Instances.FileOperator.Write_Lines_Synchronous(
                 Instances.FilePaths.OutputTextFilePath,
                 lines);
 

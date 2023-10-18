@@ -55,7 +55,7 @@ namespace R5T.C0003.Forms.Repository
         {
             var path = this.LocalRepositoryLinkLabel.Text;
 
-            WindowsExplorerOperator.Instance.OpenDirectoryInExplorer(path);
+            Instances.WindowsExplorerOperator._Platform.OpenDirectoryInExplorer(path);
         }
 
         protected void SetRemoteRepositoryUrl(string remoteRepositoryUrl)

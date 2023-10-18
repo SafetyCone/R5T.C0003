@@ -35,7 +35,7 @@ namespace R5T.C0003.Forms
         {
             this.SolutionFilePath = this.SolutionFilePathTextBox.Text;
 
-            var fileExists = Instances.FileSystemOperator.FileExists(
+            var fileExists = Instances.FileSystemOperator.Exists_File(
                 this.SolutionFilePath);
 
             this.FileExistsLabel.SetTrueOrFalse(fileExists);
