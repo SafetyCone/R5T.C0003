@@ -20,7 +20,7 @@ namespace R5T.C0003.F001
 				.Append(dependencyChains_Inclusive
 					.SelectMany(projects => projects
 						// Skip the first since it will be the root project.
-						.SkipFirst()
+						.Skip_First()
 						.Append(String.Empty)))
 				;
 
