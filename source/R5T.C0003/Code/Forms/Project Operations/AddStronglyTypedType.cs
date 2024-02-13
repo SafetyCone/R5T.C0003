@@ -18,7 +18,7 @@ namespace R5T.C0003.Forms.Project
         {
             var projectFilePath = this.SelectProjectFileModel.ProjectFilePath;
 
-            var projectDefaultNamespaceName = F0040.F000.ProjectNamespacesOperator.Instance.GetDefaultNamespaceName_FromProjectFilePath(projectFilePath);
+            var projectDefaultNamespaceName = F0040.F000.ProjectNamespacesOperator.Instance.Get_DefaultNamespaceName_FromProjectFilePath(projectFilePath);
 
             var baseTypeName = ComboBoxOperator.Instance.Get_ValueString(this.BaseTypeSelectionComboBox);
             var stronglyTypedTypeTypeName = TextBoxOperator.Instance.Get_Value(this.TypeNameTextBox);
@@ -31,7 +31,7 @@ namespace R5T.C0003.Forms.Project
                 "Guid" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedGuid,
                 "Integer" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedInteger,
                 "String" => F0083.CodeFileGenerationOperations.Instance.CreateStronglyTypedString,
-                _ => throw F0000.SwitchOperator.Instance.GetUnrecognizedSwitchValueException(baseTypeName)
+                _ => throw F0000.SwitchOperator.Instance.Get_UnrecognizedSwitchValueException(baseTypeName)
             };
 
             try

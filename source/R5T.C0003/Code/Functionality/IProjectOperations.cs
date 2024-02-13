@@ -50,7 +50,7 @@ namespace R5T.C0003
                 serviceDefinitionInterfaceTypeName);
 
             // Get the namespace name.
-            var namespaceName = F0040.F000.ProjectNamespacesOperator.Instance.GetDefaultNamespaceName(projectFilePath);
+            var namespaceName = F0040.F000.ProjectNamespacesOperator.Instance.Get_DefaultNamespaceName(projectFilePath);
 
             // Create the service definition.
             F0000.FileSystemOperator.Instance.Ensure_DirectoryExists_ForFilePath(

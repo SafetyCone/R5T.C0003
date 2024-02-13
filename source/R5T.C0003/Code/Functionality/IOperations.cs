@@ -21,37 +21,37 @@ namespace R5T.C0003
 
 		public void OpenCodeFileScriptsSolution()
 		{
-			Instances.VisualStudioOperator.OpenSolutionFile(
+			Instances.VisualStudioOperator.Open_SolutionFile(
 				Instances.SolutionFilePaths.CodeFileScripts);
 		}
 
         public void OpenProjectFileScriptsSolution()
         {
-            Instances.VisualStudioOperator.OpenSolutionFile(
+            Instances.VisualStudioOperator.Open_SolutionFile(
                 Instances.SolutionFilePaths.ProjectFileScripts);
         }
 
         public void OpenProjectScriptsSolution()
         {
-            Instances.VisualStudioOperator.OpenSolutionFile(
+            Instances.VisualStudioOperator.Open_SolutionFile(
                 Instances.SolutionFilePaths.ProjectScripts);
         }
 
         public void OpenRepositoryScriptsSolution()
         {
-            Instances.VisualStudioOperator.OpenSolutionFile(
+            Instances.VisualStudioOperator.Open_SolutionFile(
                 Instances.SolutionFilePaths.RepositoryScripts);
         }
 
         public void OpenSolutionFileScriptsSolution()
         {
-            Instances.VisualStudioOperator.OpenSolutionFile(
+            Instances.VisualStudioOperator.Open_SolutionFile(
                 Instances.SolutionFilePaths.SolutionFileScripts);
         }
 
         public void OpenSolutionScriptsSolution()
         {
-            Instances.VisualStudioOperator.OpenSolutionFile(
+            Instances.VisualStudioOperator.Open_SolutionFile(
                 Instances.SolutionFilePaths.SolutionScripts);
         }
     }

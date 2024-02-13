@@ -10,7 +10,7 @@ namespace R5T.C0003
 	{
 		public string GetLogFilePath()
         {
-			var now = F0000.NowOperator.Instance.GetNow_Local();
+			var now = F0000.NowOperator.Instance.Get_Now_Local();
 
 			var timestamp = F0000.DateTimeOperator.Instance.ToString_YYYYMMDD_HHMMSS(now);
 

@@ -92,7 +92,7 @@ namespace R5T.C0003.Forms.Repository
                 this.SetRemoteRepositoryUrl(createSolutionRepositoryResult.RemoteRepositoryUrl);
                 this.SetLocalRepositoryDirectoryPath(createSolutionRepositoryResult.LocalDirectoryPath);
 
-                F0088.VisualStudioOperator.Instance.OpenSolutionFile(
+                F0088.VisualStudioOperator.Instance.Open_SolutionFile(
                     createSolutionRepositoryResult.SolutionFilePath);
             }
 
