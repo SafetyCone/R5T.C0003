@@ -125,14 +125,14 @@ namespace R5T.C0003.Forms
             var selectedNodeName = e.Node.Name;
 
             // Return if an unrecognized node.
-            if(!panelFormConstructorsByTreeViewNodeName.ContainsKey(selectedNodeName))
+            if (!panelFormConstructorsByTreeViewNodeName.TryGetValue(
+                selectedNodeName,
+                out var constructor))
             {
                 return;
             }
 
             // Now we have a recognized node.
-            var constructor = panelFormConstructorsByTreeViewNodeName[selectedNodeName];
-
             var panelForm = constructor();
 
             //// Handle any setup that must be off the WinForms designer initialzation path.
