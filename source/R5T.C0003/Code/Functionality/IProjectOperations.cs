@@ -8,7 +8,8 @@ using R5T.T0132;
 namespace R5T.C0003
 {
 	[FunctionalityMarker]
-	public partial interface IProjectOperations : IFunctionalityMarker
+	public partial interface IProjectOperations : IFunctionalityMarker,
+        F0084.IProjectOperations
 	{
         public async Task RemoveExtraneousProjectReferencesFromAllRecursiveReferences(
             string projectFilePath)

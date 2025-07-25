@@ -20,9 +20,10 @@ namespace R5T.C0003.Forms.Project
     {
         private Dictionary<string, InstanceTypeInformation> InstanceTypeContentsByTypeName { get; set; }
 
-        private string InstanceTypeName => F0062.ComboBoxOperator.Instance.Get_ValueString(
+        private string InstanceTypeName => Instances.ComboBoxOperator.Get_ValueString(
             this.InstanceTypeComboBox);
-        private string InstanceTypeNameStem => F0062.TextBoxOperator.Instance.Get_Value(
+
+        private string InstanceTypeNameStem => Instances.TextBoxOperator.Get_Value(
             this.NameTextBox);
 
 
@@ -33,7 +34,7 @@ namespace R5T.C0003.Forms.Project
 
         public void Setup()
         {
-            this.InstanceTypeContentsByTypeName = InstanceTypeOperations.Instance.GetInstanceTypeInformationsByTypeName();
+            this.InstanceTypeContentsByTypeName = InstanceTypeOperations.Instance.Get_InstanceTypeInformationsByTypeName();
 
             this.InstanceTypeComboBox.Items.AddRange(
                 this.InstanceTypeContentsByTypeName.Keys.ToArray());
@@ -49,10 +50,10 @@ namespace R5T.C0003.Forms.Project
 
             async Task Internal()
             {
-                await F0084.ProjectOperations.Instance.CreateInstancesInProject(
+                await Instances.ProjectOperations.CreateInstancesInProject(
                     projectFilePath,
                     instanceTypeInformation,
-                    F0000.EnumerableOperator.Instance.From(instanceTypeNameStem));
+                    Instances.EnumerableOperator.From(instanceTypeNameStem));
             }
 
             await TryOperator.Instance.TryShowDoneOrExceptionMessage(Internal);

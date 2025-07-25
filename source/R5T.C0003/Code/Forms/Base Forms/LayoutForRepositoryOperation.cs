@@ -28,13 +28,10 @@ namespace R5T.C0003.Forms
         /// </summary>
         public void Setup()
         {
-            this.OwnerNameSelectorComboBox.Items.AddRange(new string[]
-            {
-                GitHubOwnerNames.Instance.DavidCoats,
-                GitHubOwnerNames.Instance.SafetyCone
-            });
+            this.OwnerNameSelectorComboBox.Items.AddRange(
+                Instances.GitHubOwnerNameSets.All);
 
-            this.OwnerNameSelectorComboBox.SelectedItem = GitHubOwnerNames.Instance.SafetyCone;
+            this.OwnerNameSelectorComboBox.SelectedItem = GitHubOwnerNames.Instance.Functionairy;
         }
 
         //private void LayoutForRepositoryOperation_Shown(object sender, EventArgs e)
@@ -52,7 +49,7 @@ namespace R5T.C0003.Forms
         {
             var gitHubOwnerName = this.GetGitHubOwnerName();
 
-            var gitHubOwner = GitHubOwnerOperator.Instance.GetGitHubOwner(gitHubOwnerName);
+            var gitHubOwner = GitHubOwnerOperator.Instance.Get_GitHubOwner(gitHubOwnerName);
             return gitHubOwner;
         }
 

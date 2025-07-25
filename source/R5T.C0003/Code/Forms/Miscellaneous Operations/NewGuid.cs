@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-using R5T.F0000;
 using R5T.F0062;
 
 
@@ -24,7 +15,7 @@ namespace R5T.C0003.Forms.Miscellaneous
         {
             InitializeComponent();
 
-            this.Formatter = GuidOperator.Instance.ToString_D_Uppercase_Format;
+            this.Formatter = Instances.GuidOperator.To_String_D_Uppercase_Format;
 
             this.SetGuid(default);
         }
@@ -52,7 +43,7 @@ namespace R5T.C0003.Forms.Miscellaneous
 
         private void RunButton_Click(object sender, EventArgs e)
         {
-            var guid = GuidOperator.Instance.New();
+            var guid = Instances.GuidOperator.New();
 
             this.SetGuid(guid);
         }
@@ -69,21 +60,21 @@ namespace R5T.C0003.Forms.Miscellaneous
         {
             RadioButtonOperator.Instance.IfChecked(
                 this.DUpperRadioButton,
-                () => this.SetFormatter(GuidOperator.Instance.ToString_D_Uppercase_Format));
+                () => this.SetFormatter(Instances.GuidOperator.To_String_D_Uppercase_Format));
         }
 
         private void DLowerFormatRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButtonOperator.Instance.IfChecked(
                 this.DLowerFormatRadioButton,
-                () => this.SetFormatter(GuidOperator.Instance.ToString_D_Format));
+                () => this.SetFormatter(Instances.GuidOperator.To_String_D_Format));
         }
 
         private void NLowerFormatRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButtonOperator.Instance.IfChecked(
                 this.NLowerFormatRadioButton,
-                () => this.SetFormatter(GuidOperator.Instance.ToString_N_Format));
+                () => this.SetFormatter(Instances.GuidOperator.To_String_N_Format));
         }
     }
 }

@@ -6,13 +6,17 @@ namespace R5T.C0003
     public static class Instances
     {
         public static F0068.ICodeFileOperations CodeFileOperations => F0068.CodeFileOperations.Instance;
+        public static F0062.IComboBoxOperator ComboBoxOperator => F0062.ComboBoxOperator.Instance;
+        public static L0066.IEnumerableOperator EnumerableOperator => L0066.EnumerableOperator.Instance;
         public static F0000.IFileOperator FileOperator => F0000.FileOperator.Instance;
         public static IFilePaths FilePaths => C0003.FilePaths.Instance;
         public static F0000.IFileSystemOperator FileSystemOperator => F0000.FileSystemOperator.Instance;
         public static F0041.IGitHubOperator GitHubOperator => F0041.GitHubOperator.Instance;
         public static F0047.IGitHubOwnerNames GitHubOwnerNames => F0047.GitHubOwnerNames.Instance;
+        public static F0047.IGitHubOwnerNameSets GitHubOwnerNameSets => F0047.GitHubOwnerNameSets.Instance;
         public static F0047.IGitHubOwnerOperator GitHubOwnerOperator => F0047.GitHubOwnerOperator.Instance;
         public static F0047.IGitHubOwners GitHubOwners => F0047.GitHubOwners.Instance;
+        public static F10Y.L0000.IGuidOperator GuidOperator => F10Y.L0000.GuidOperator.Instance;
         public static ILogFilePathOperator LogFilePathOperator => C0003.LogFilePathOperator.Instance;
         public static F0033.INotepadPlusPlusOperator NotepadPlusPlusOperator => F0033.NotepadPlusPlusOperator.Instance;
         public static IOperations Operations => C0003.Operations.Instance;
@@ -25,6 +29,7 @@ namespace R5T.C0003
         public static F0085.ISolutionFileOperations SolutionFileOperations => F0085.SolutionFileOperations.Instance;
         public static Z0018.ISolutionFilePaths SolutionFilePaths => Z0018.SolutionFilePaths.Instance;
         public static ISolutionOperations SolutionOperations => C0003.SolutionOperations.Instance;
+        public static F0062.ITextBoxOperator TextBoxOperator => F0062.TextBoxOperator.Instance;
         public static F001.ITextOutputGenerator TextOutputGenerator => F001.TextOutputGenerator.Instance;
         public static ITreeViewNodeNames TreeViewNodeNames => C0003.TreeViewNodeNames.Instance;
         public static ITryOperator TryOperator => C0003.TryOperator.Instance;
